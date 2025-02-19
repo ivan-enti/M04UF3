@@ -1,0 +1,11 @@
+.Die {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-weight:bold;
+  font-size:48px;
+  width: 128px;
+  height: 128px;
+  background-color:blue;
+  color:#ffffff;
+}
