@@ -1,8 +1,5 @@
-.App {
+.Dice {
   display:flex;
   justify-content:center;
   align-items:center;
-}
-.rollmania{
-  text-align:center;
 }
