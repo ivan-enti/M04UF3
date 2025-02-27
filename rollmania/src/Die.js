@@ -3,7 +3,7 @@ import { useState } from 'react';
 
 function Die(props) {
 
-  let [number, setNumber] = useState(1)
+  let [number, setNumber] = useState("-")
 
   let min = 1;
   let max = 7 - min; 
@@ -20,8 +20,6 @@ function Die(props) {
 
   if(props.roll){
 	number = get_random()
-	console.log("a");
-	props.roll_done();
   }
   
   return (

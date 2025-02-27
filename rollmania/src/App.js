@@ -2,6 +2,7 @@ import './App.css';
 import Title from './Title.js';
 import Dice from './Dice.js';
 import RollButton from './RollButton.js';
+import PlayerName from './PlayerName.js';
 import { useState } from 'react';
 
 function App() {
@@ -13,15 +14,16 @@ function App() {
 	console.log("roll");
   }
   function roll_done(){
-	roll = false;
+	setRoll(false);
 	console.log("roll_done");
   }
 
   return (
     <div className="rollmania">
       <Title title="Rollmania!!!"/>
+	  <PlayerName />
   	  <main className="App">
-	  	<Dice amount="5" roll={roll} roll_done={roll_done}/>
+	  	<Dice amount="5" roll={roll} />
 	  </main>
 	  <RollButton roll_func={roll_dice}/>
     </div>
