@@ -1,9 +1,15 @@
 import './Die.css';
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 function Die(props) {
 
-  let [number, setNumber] = useState("-")
+  const [number, setNumber] = useState("-");
+  const randomized = useRef(false);
+
+  useEffect(() => {
+	if (number != "-")
+	  props.onResult(number);
+  });
 
   let min = 1;
   let max = 7 - min; 
@@ -18,8 +24,10 @@ function Die(props) {
 	setNumber(parseInt(r));
   }
 
-  if(props.roll){
-	number = get_random()
+  if(props.roll && !randomized.current){
+	set_random();
+
+	randomized.current = true;
   }
   
   return (
