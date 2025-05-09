@@ -9,6 +9,7 @@ import { useState, useRef } from 'react';
 function App() {
   
   const [roll, setRoll] = useState(false);
+  const [player, setPlayer] = useState("");
 
   const player_name = useRef("");
   const player_score = useRef(0);
@@ -24,11 +25,16 @@ function App() {
 
   function set_player_name(name){
     player_name.current = name;
-	console.log(name);
   }
   function set_player_score(score){
-    player_name.score = score;
-	console.log(score);
+    player_score.current = score;
+	if(player_name.current != ""){
+		setPlayer({
+		"nombre" : player_name.current, 
+		"score": player_score.current
+		});
+		console.log(player);
+	}
   }
 
   return (
@@ -39,7 +45,7 @@ function App() {
 	  	<Dice amount="5" roll={roll} setPlayerScore={set_player_score}/>
 	  </main>
 	  <RollButton roll_func={roll_dice}/>
-	  <Scores />
+	  <Scores current_score={player.current} />
     </div>
   );
 }

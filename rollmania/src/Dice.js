@@ -22,7 +22,7 @@ function Dice(props) {
 	score.current += points;
 	count += 1;
 	if(die_num.current == count)
-	  props.setPlayerScore(score);
+	  props.setPlayerScore(score.current);
   }
 
 
