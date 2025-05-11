@@ -1,6 +1,6 @@
 import './Dice.css';
 import Die from './Die.js';
-import { useState, useRef } from 'react';
+import { useRef } from 'react';
 
 function Dice(props) {
 
@@ -21,7 +21,7 @@ function Dice(props) {
   function sumScore(points){
 	score.current += points;
 	count += 1;
-	if(die_num.current == count)
+	if(die_num.current === count)
 	  props.setPlayerScore(score.current);
   }
 

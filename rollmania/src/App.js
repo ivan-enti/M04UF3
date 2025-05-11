@@ -28,7 +28,7 @@ function App() {
   }
   function set_player_score(score){
     player_score.current = score;
-	if(player_name.current != ""){
+	if(player_name.current !== ""){
 		setPlayer({
 		"nombre" : player_name.current, 
 		"score": player_score.current
@@ -42,7 +42,7 @@ function App() {
       <Title title="Rollmania!!!"/>
 	  <PlayerName setPlayerName={set_player_name}/>
   	  <main className="App">
-	  	<Dice amount="5" roll={roll} setPlayerScore={set_player_score}/>
+	  	<Dice amount="5" roll={roll} setPlayerScore={set_player_score} roll_dice={roll_done}/>
 	  </main>
 	  <RollButton roll_func={roll_dice}/>
 	  <Scores current_score={player.current} />

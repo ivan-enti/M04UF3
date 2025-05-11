@@ -11,8 +11,12 @@ function Scores(props) {
     let tmp_list = [];
     let score_local_name = "puntuacion";
 
+	if(localStorage.getItem(score_local_name) === null){
+		let temp = '{"0":{"nombre":"Jaime", "score":"10"}}'
+		localStorage.setItem(score_local_name, JSON.parse(temp))
+	}
+
   	let score_json = localStorage.getItem(score_local_name);
-  	score_json = JSON.parse(score_json);
 
   	for(let i = 0; i < score_json.length; i++){
       let name = score_json[i].nombre;
@@ -27,8 +31,7 @@ function Scores(props) {
   if(!(initial_set.current))
     get_score();
 
-  if(props.current_score != "" && !(new_player.current)){
-	console.log(props.current_score);
+  if(props.current_score !== "" && !(new_player.current)){
 	new_player.current = true;
   }
 

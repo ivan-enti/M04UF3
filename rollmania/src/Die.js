@@ -7,7 +7,7 @@ function Die(props) {
   const randomized = useRef(false);
 
   useEffect(() => {
-	if (number != "-")
+	if (number !== "-")
 	  props.onResult(number);
   });
 
